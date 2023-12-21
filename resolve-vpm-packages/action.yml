@@ -29,7 +29,7 @@ runs:
       env:
         REPOS: ${{ inputs.repos }}
     - id: main
-      run: vrc-get install --project $PROJECT_PATH $( ${{ !!inputs.prerelease }} && echo --prerelease )
+      run: set -x; vrc-get install --project $PROJECT_PATH $( ${{ !!inputs.prerelease }} && echo --prerelease )
       shell: bash
       env:
         PROJECT_PATH: ${{ inputs.project-path }}
